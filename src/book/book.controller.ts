@@ -42,8 +42,8 @@ export class BookController {
   }
 
   @Delete('delete/:id')
-  async delete(@Param() id: number) {
-    return this.bookService.delete(id);
+  async delete(@Param('id') id: string) {
+    return this.bookService.delete(+id);
   }
 
   @Post('upload')
